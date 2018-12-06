@@ -33,6 +33,7 @@
                     if (mysqli_connect_errno($con)) {
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     } else {
+                        $recordid= $basicinfo['record_id'];
                         $sqlStr = "SELECT * " .
                                 "FROM memeberbasicinfo mb,memeberaccount " ;
                                "WHERE mb.record_id = '$recordid' ";
