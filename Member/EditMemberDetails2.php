@@ -34,7 +34,7 @@
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     } else {
                         $recordid= $basicinfo['record_id'];
-                        $sqlStr = "SELECT * " .
+                        $sqlStr = "SELECT *, aes_decrypt(password,'$SALT') as password " .
                                 "FROM memeberbasicinfo mb,memeberaccount " ;
                                "WHERE mb.record_id = '$recordid' ";
                         $result = mysqli_query($con, $sqlStr);
