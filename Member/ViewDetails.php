@@ -1,6 +1,56 @@
 <?php
 // require the checkLoginStatus.php file
 /* require 'checkLoginState.php'; */
+function appendSuperScript($day){
+    #remove 0 from single digit, e.g. 01 -> 1
+    if($day[0] ==0){
+        $day = $day[1];
+    }
+
+    switch($day){
+        case "1":
+            return $day ."<sup>st</sup>";
+        case "2":
+            return $day ."<sup>nd</sup>";
+        case "3":
+            return $day ."<sup>rd</sup>";
+        default:
+            return $day ."<sup>th</sup>";
+    }
+}
+function getMonthName($month){
+    
+    switch($month){
+        case "01":
+            return "January";
+        case "02":
+            return "February";
+        case "03":
+            return "March";
+        case "04":
+            return "April";
+        case "05":
+            return "May";
+        case "06":
+            return "June";
+        case "07":
+            return "July";
+        case "08":
+            return "August";
+        case "09":
+            return "September";
+        case "10":
+            return "October";
+        case "11":
+            return "November";
+        case "12":
+            return "December";            
+
+    }
+
+}
+
+
 ?>
 <html>
     <head>
@@ -38,6 +88,12 @@
                     echo "<b>Date Of Birth:</b> " . $basicinfo['date_of_birth'] . "<br />";
                     echo "<b>Last modified:</b>" . $basicinfo['last_modified'] . "<br />";
                     echo "<b>Date of Creation:</b>" . $basicinfo['data_of_creation'] . "<br />";
+                    $dob = substr($basicinfo['date_of_birth'],0,10);
+                    $dob = explode('-',$dob);
+                    $day = appendSuperScript($dob[2]);
+                    $month = getMonthName($dob[1]);
+                    $year = $dob[0];
+                    echo "<b>Date Of Birth:</b> ". $day . " " .$month. " ". $year."<br/><br/>";
                     echo "<a href='EditMemberDetails2.php?'><b>[ Edit ]</b></a><br/>";
                     ?>
 
