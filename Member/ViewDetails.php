@@ -1,6 +1,7 @@
 <?php
 // require the checkLoginStatus.php file
 /* require 'checkLoginState.php'; */
+
 function appendSuperScript($day){
     #remove 0 from single digit, e.g. 01 -> 1
     if($day[0] ==0){
@@ -70,31 +71,38 @@ function getMonthName($month){
 
                 <div id="pageContent">
 
-                    <h3>Personal Details</h3>
+                    <h2>Personal Detail</h2>
 
                     <?php
-                    echo "<b>Record ID:</b> " . $basicinfo['record_id'] . "<br />";
-                    echo "<b>Name:</b> " . $basicinfo['first_name'] . " " . $basicinfo['last_name'] . "<br />";
-                    echo "<b>Gender:</b> " . $basicinfo['gender'] . "<br />";
-                    echo "<b>Nationality:</b> " . $basicinfo['nationality'] . "<br />";
-                    echo "<b>Occupation:</b> " . $basicinfo['occupation'] . "<br />";
-                    echo "<b>Address 1:</b> " . $basicinfo['address_line1'] . "<br />";
-                    echo "<b>Address 2:</b> " . $basicinfo['address_line2'] . "<br />";
-                    echo "<b>Address 3:</b> " . $basicinfo['address_line3'] . "<br />";
-                    echo "<b>Email 1:</b> " . $basicinfo['email_address_1'] . "<br />";
-                    echo "<b>Email 2:</b> " . $basicinfo['email_address_2'] . "<br />";
-                    echo "<b>Contact Number 1:</b> " . $basicinfo['contact_no1'] . "<br />";
-                    echo "<b>Contact Number 2:</b> " . $basicinfo['contact_no2'] . "<br />";
-                    echo "<b>Date Of Birth:</b> " . $basicinfo['date_of_birth'] . "<br />";
-                    echo "<b>Last modified:</b>" . $basicinfo['last_modified'] . "<br />";
-                    echo "<b>Date of Creation:</b>" . $basicinfo['data_of_creation'] . "<br />";
+                    echo "<br/>";
+                    echo "<p>";
+                    echo "<b>Full Name:</b> &nbsp;" . $basicinfo['first_name'] . " " . $basicinfo['last_name'] . "<br /><br/>";
+                    echo "<b>Gender:</b> " . $basicinfo['gender'] . "<br /><br/>";
                     $dob = substr($basicinfo['date_of_birth'],0,10);
                     $dob = explode('-',$dob);
                     $day = appendSuperScript($dob[2]);
                     $month = getMonthName($dob[1]);
                     $year = $dob[0];
                     echo "<b>Date Of Birth:</b> ". $day . " " .$month. " ". $year."<br/><br/>";
+
+                    echo "<b>Nationality:</b> " . $basicinfo['nationality'] . "<br /><br/>";
+                    echo "<b>Occupation:</b> " . $basicinfo['occupation'] . "<br /><br/>";
+
+                    echo "<b>Contact Number:</b> " . $basicinfo['contact_no1'] . "<br /><br/>";
+                    echo "<b>Email:</b> " . $basicinfo['email_address_1'] . "<br /><br/><br/>";
+
+                    echo "<h3 style=''>Address</h3><br/>";
+                    echo "<b style='font-size:12px;'>Street Name:</b> " . $basicinfo['address_line1'] . "&nbsp;&nbsp; &nbsp; &nbsp;";
+                    echo "<b style='font-size:12px;'>Block No:</b> " . $basicinfo['address_line2'] . "&nbsp;&nbsp; &nbsp; &nbsp;";
+                    echo "<b style='font-size:12px;'>Postal Code:</b> " . $basicinfo['address_line3'] . "&nbsp;&nbsp; &nbsp; &nbsp;"."<br/><br/><br/>";
+
+
+                    
+                    echo "<h3>Account </h3><br/>";
+                    echo "<b style='font-size:12px;'>Date of Creation:</b> " . $basicinfo['data_of_creation'] . "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    echo "<b style='font-size:12px;'>Last modified:</b> " . $basicinfo['last_modified'] . "<br/><br/>";
                     echo "<a href='EditMemberDetails2.php?'><b>[ Edit ]</b></a><br/>";
+                    echo "</p>";
                     ?>
 
                 </div>
