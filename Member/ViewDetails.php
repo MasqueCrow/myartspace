@@ -20,14 +20,14 @@
 
                 <div id="pageContent">
 
-                    <h3>Personal Details:</h3>
+                    <h3>Personal Details</h3>
 
                     <?php
                     echo "<b>Record ID:</b> " . $basicinfo['record_id'] . "<br />";
                     echo "<b>Name:</b> " . $basicinfo['first_name'] . " " . $basicinfo['last_name'] . "<br />";
                     echo "<b>Gender:</b> " . $basicinfo['gender'] . "<br />";
                     echo "<b>Nationality:</b> " . $basicinfo['nationality'] . "<br />";
-                    echo "<b>Ocuppation:</b> " . $basicinfo['occupation'] . "<br />";
+                    echo "<b>Occupation:</b> " . $basicinfo['occupation'] . "<br />";
                     echo "<b>Address 1:</b> " . $basicinfo['address_line1'] . "<br />";
                     echo "<b>Address 2:</b> " . $basicinfo['address_line2'] . "<br />";
                     echo "<b>Address 3:</b> " . $basicinfo['address_line3'] . "<br />";
@@ -39,14 +39,6 @@
                     echo "<b>Last modified:</b>" . $basicinfo['last_modified'] . "<br />";
                     echo "<b>Date of Creation:</b>" . $basicinfo['data_of_creation'] . "<br />";
                     echo "<a href='EditMemberDetails2.php?'><b>[ Edit ]</b></a><br/>";
-                    //  echo "<br />";
-                    //display information from basicinfo
-                    //   echo "Name: "                 . $basicinfo['first_name'] . " ".$basicinfo['last_name'].  "<br />";
-                    //   echo "Gender: "               .  $basicinfo['gender'] . "<br />";
-                    //  echo "Nationality: "          .  $basicinfo['nationality'] . "<br />";
-                    //  echo "Ocuppation: "           .  $basicinfo['occupation'] . "<br />";
-                    // echo "Address 1: "            .  $basicinfo['address_line1'] . "<br />";
-                    // echo "<br>";
                     ?>
 
                 </div>
