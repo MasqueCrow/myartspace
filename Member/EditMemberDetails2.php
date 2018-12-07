@@ -42,7 +42,7 @@
                         $result = mysqli_query($con, $sqlStr);
                         $row = mysqli_fetch_array($result);
                         ?>
-                     <h3>Personal Details:</h3>
+                     <h2>Personal Details:</h2>
                   <div class="CustomerDetailsBox2">
                     <form id="form" class="blocks" action="handleEdit2.php" method="POST">
                 <!--Record ID : <?= $recordid ?><br/> -->
@@ -56,14 +56,22 @@
                 <p><label>Gender:</Label><input class="text"  type="text" name="gender" value="<?= $row['gender'] ?>"/></p>
                 <p><label>Nationality:</Label><input class="text"  type="text" name="nationality" value="<?= $row['nationality'] ?>"/></p>
                 <p><label>Occupation:</Label><input class="text"  type="text" name="occupation" value="<?= $row['occupation'] ?>"/></p>
-                <p><label>Address 1:</Label><input class="text"  type="text" name="address_line1" value="<?= $row['address_line1'] ?>"/></p>
-                <p><label>Address 2:</Label><input class="text"  type="text" name="address_line2" value="<?= $row['address_line2'] ?>"/></p>
-                <p><label>Address 3:</Label><input class="text"  type="text" name="address_line3" value="<?= $row['address_line3'] ?>"/></p>
-                <p><label>Email 1:</Label><input class="text"   type="text" name="email_address_1" value="<?= $row['email_address_1'] ?>"/></p>
-                <p><label>Email 2:</Label><input class="text"   type="text" name="email_address_2" value="<?= $row['email_address_2'] ?>"/></p>
+                <p><label>Street Name:</Label><input class="text"  type="text" name="address_line1" value="<?= $row['address_line1'] ?>"/></p>
+                <p><label>Block No:</Label><input class="text"  type="text" name="address_line2" value="<?= $row['address_line2'] ?>"/></p>
+                <p><label>Postal Code:</Label><input class="text"  type="text" name="address_line3" value="<?= $row['address_line3'] ?>"/></p>
+                <p><label>Primary Email:</Label><input class="text"   type="text" name="email_address_1" value="<?= $row['email_address_1'] ?>"/></p>
+                <p><label>Alternate Email:</Label><input class="text"   type="text" name="email_address_2" value="<?= $row['email_address_2'] ?>"/></p>
                 <p><label>Contact No 1:</Label><input class="text"  type="text" name="contact_no1" value="<?= $row['contact_no1'] ?>"/></p>
                 <p><label>Contact No 2:</Label><input class="text"  type="text" name="contact_no2" value="<?= $row['contact_no2'] ?>"/></p>
-                <p><label>Date Of Birth:</Label><input class="text"  type="text" name="date_of_birth" value="<?= $row['date_of_birth'] ?>"/></p>
+
+                <?php
+                #modify date format
+                $dob = $row['date_of_birth'].substr(0,10);
+                $dob = explode(' ',$dob); 
+                $dob = $dob[0];
+                
+                ?>
+                <p><label>Date Of Birth:</Label><input class="text"  type="text" name="date_of_birth" value="<?= $dob ?>"/></p>
                 <input type="submit" class="btn" value="update record"/><br/>
             </form>
                
