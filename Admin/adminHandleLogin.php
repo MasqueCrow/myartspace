@@ -9,17 +9,11 @@ $adminpassword=$_POST['password'];
 if(mysqli_connect_errno($connect)){
 echo"Failed to connect to MYSQL".mysqli_connect_errno($connect);    
 }else{
-  /*  $sqlAdminQuery=
+    $sqlAdminQuery=
             "SELECT * ".
         "FROM adminaccount ".
         "WHERE admin_loginid='$admin' AND ".
-        "password=AES_ENCRYPT('$adminpassword','$SALT')  ";*/
-
-        $sqlAdminQuery=
-            "SELECT * ".
-        "FROM adminaccount ".
-        "WHERE admin_loginid='$admin' AND ".
-        "password= '$adminpassword'  ";
+        "password=AES_ENCRYPT('$adminpassword','$SALT')  ";
     
     $result=mysqli_query($connect,$sqlAdminQuery)or die(mysqli_error($connect)) ;
     if($row=mysqli_fetch_array($result)){
