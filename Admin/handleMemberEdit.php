@@ -44,7 +44,7 @@
                         $contact2 = $_POST['contact_no2'];
                         $DOB = $_POST['date_of_birth'];
 
-                        $sqlStr = "UPDATE memeberbasicinfo " .
+                        $sqlStr = "UPDATE memberbasicinfo " .
                                 "SET first_name ='$first_name', " .
                                 "last_name='$last_name', " .
                                 "gender='$gender', " . 

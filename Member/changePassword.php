@@ -33,7 +33,7 @@
         } else {
 
             $sqlStr = "SELECT password " .
-                    "FROM memeberaccount ".
+                    "FROM memberaccount ".
                     "WHERE record_id='$record_id' "; 
 
             $result = mysqli_query($con, $sqlStr);

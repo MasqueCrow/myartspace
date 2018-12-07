@@ -11,7 +11,7 @@ function getMemberinfo($connect1) {
     if (!mysqli_connect_errno($connect1)) {
         $sqlQueryStr =
                 "SELECT * " .
-                "FROM  memeberbasicinfo mb ".
+                "FROM  memberbasicinfo mb ".
                 "WHERE record_id ='$record_id'";
 
 

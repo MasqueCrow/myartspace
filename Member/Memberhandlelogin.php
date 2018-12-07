@@ -19,7 +19,7 @@
         if (!mysqli_connect_errno($con)) {
             $sqlQueryStr =
                     "SELECT *  " .
-                    "FROM memeberaccount ma, memeberbasicinfo mb " .
+                    "FROM memberaccount ma, memberbasicinfo mb " .
                     "WHERE ma.login_id= '$username' AND ma.password = AES_ENCRYPT('$password','$SALT') AND  ma.record_id =mb.record_id";
 
             $result = mysqli_query($con, $sqlQueryStr) or die(mysql_error($con, $sqlQueryStr)); // execute the SQL query        

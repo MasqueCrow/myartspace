@@ -34,7 +34,7 @@ List the members for the specific packages
                         $memPackQuery =
                                 " SELECT s.package_id as package_id,m.first_name,m.last_name,gender,nationality,
                                     m.record_id as record_id ,s.member_record_id,s.status as s_status " .
-                                "FROM memeberbasicinfo m,signuppackage s " .
+                                "FROM memberbasicinfo m,signuppackage s " .
                                 "WHERE m.record_id= s.member_record_id AND s.package_id='$package_id' ";
                         //AND s.status='0'
                         $result = mysqli_query($con, $memPackQuery) or die(mysqli_error($con));

@@ -7,7 +7,7 @@
     </head>
        <body>
         <?php
- session_start();
+            session_start();
 
         if (isset($_SESSION['basicinfo'])) { // basicinfo exist in session
             $basicinfo = $_SESSION['basicinfo']; // get basicinfo from session

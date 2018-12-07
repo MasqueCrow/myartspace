@@ -27,7 +27,7 @@ $record_id=$basicinfo['record_id'];
                     } else {
                            $password = $_POST['password'];
                            
-                           $sqlStr = "UPDATE memeberaccount " .
+                           $sqlStr = "UPDATE memberaccount " .
                                 "SET password = AES_ENCRYPT('$password','$SALT'),last_modified=NOW() ".
                                    "WHERE record_id='$record_id' ";
                                 

@@ -39,7 +39,7 @@
                         $contact2 = $_POST['contact_no2'];
                         $DOB = $_POST['date_of_birth'];
 
-                        $sqlStr = "INSERT INTO memeberbasicinfo " .
+                        $sqlStr = "INSERT INTO memberbasicinfo " .
                                 " (first_name, last_name, gender, nationality, occupation, address_line1, address_line2, address_line3, email_address_1, email_address_2, contact_no1, contact_no2, date_of_birth,createdby,data_of_creation) " .
                                 "VALUES ('$first_name', " .
                                 "'$last_name', " .
@@ -63,7 +63,7 @@
 
 
                         $Auto_increment = mysqli_insert_id($con);
-                        $sqlStr2 = "INSERT INTO memeberaccount " .
+                        $sqlStr2 = "INSERT INTO memberaccount " .
                                 "(login_id, password,record_id,data_of_creation) " .
                                 "VALUES (' $emailaddress1', AES_ENCRYPT('$password','$SALT'),'$Auto_increment',NOW()) ";
 

@@ -38,7 +38,7 @@ if (mysqli_connect_errno($con)) {
       } */
     /* MemberBasicinfo update in database */
     $sqlQueryStbasicinfo =
-            "INSERT INTO memeberbasicinfo " .
+            "INSERT INTO memberbasicinfo " .
             "(first_name,last_name,gender,nationality,occupation,address_line1,address_line2,address_line3,
       email_address_1,email_address_2,contact_no1,contact_no2,date_of_birth,remarks) " .
             "VALUES " .

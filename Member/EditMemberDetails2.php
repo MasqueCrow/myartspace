@@ -26,6 +26,7 @@
     <div id="pageContent">
        
         <?php
+        var_dump($basicinfo['record_id']);
                     require '../dbfunction.php';
 
                     $con = getDbConnect();
@@ -33,10 +34,11 @@
                     if (mysqli_connect_errno($con)) {
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     } else {
-                        $recordid= $basicinfo['record_id'];
+                        $recordid = $basicinfo['record_id'];
                         $sqlStr = "SELECT *, aes_decrypt(password,'$SALT') as password " .
-                                "FROM memeberbasicinfo mb,memeberaccount " ;
+                                "FROM memberbasicinfo mb,memberaccount " ;
                                "WHERE mb.record_id = '$recordid' ";
+                        
                         $result = mysqli_query($con, $sqlStr);
                         $row = mysqli_fetch_array($result);
                         ?>
@@ -79,3 +81,4 @@
         
     </body>
 </html>
+

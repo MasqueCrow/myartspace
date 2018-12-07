@@ -7,7 +7,7 @@ if (!mysqli_connect_errno($con)) {
   if (isset($_POST['username'])) {//If a username has been submitted 
        $username = $_POST['username']; //Some clean up :)
 
-        $check_for_username = mysqli_query($con,"SELECT login_id FROM memeberaccount WHERE login_id='$username'  ")or die(mysqli_error($con));
+        $check_for_username = mysqli_query($con,"SELECT login_id FROM memberaccount WHERE login_id='$username'  ")or die(mysqli_error($con));
 //Query to check if username is available or not 
 
         if (mysqli_num_rows($check_for_username)) {

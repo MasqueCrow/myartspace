@@ -8,7 +8,7 @@ $member_id=$_POST['memberid']; //retrieving post from registerPackagerequest.php
 $con = getDbConnect(); 
 if (!mysqli_connect_errno($con)) { 
 $SqlMemberQuery="SELECT  record_id,first_name,last_name,status ".
-        "FROM memeberbasicinfo " .
+        "FROM memberbasicinfo " .
         "WHERE record_id LIKE '$member_id%' AND status='0' " .
          "ORDER BY record_id";
 $sql_result=mysqli_query($con,$SqlMemberQuery);
