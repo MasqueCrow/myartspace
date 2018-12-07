@@ -6,11 +6,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       
-        <link href="../Admin/css/default.css" rel="stylesheet" type="text/css" />
+       <link href="../Admin/css/default.css" rel="stylesheet" type="text/css" />
+        
+
         <?php
         include "../Admin/StoreVadJs.html";
         ?>
+
+        <!-- Datepicker Jquery links -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!----------------------------->
+        
+        <script>
+            $(function(){
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "1800:2030",
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+        </script>
+
         <title></title>
     </head>
     <body>
@@ -26,7 +47,6 @@
     <div id="pageContent">
        
         <?php
-        #var_dump($basicinfo['record_id']);
                     require '../dbfunction.php';
 
                     $con = getDbConnect();
@@ -45,7 +65,6 @@
                      <h2>Personal Details:</h2>
                   <div class="CustomerDetailsBox2">
                     <form id="form" class="blocks" action="handleEdit2.php" method="POST">
-                <!--Record ID : <?= $recordid ?><br/> -->
                         <p><label>User Name:</Label><input  id="username"class="text" type="text" name="login_id"value="<?= $row['login_id'] ?>" />
                          <span id="availability_status"></span>
                         </p>
@@ -71,7 +90,7 @@
                 $dob = $dob[0];
                 
                 ?>
-                <p><label>Date Of Birth:</Label><input class="text"  type="text" name="date_of_birth" value="<?= $dob ?>"/></p>
+                <p><label>Date Of Birth:</Label><input class="text" id='datepicker' type="text" name="date_of_birth" value="<?= $dob ?>"/></p>
                 <input type="submit" class="btn" value="update record"/><br/>
             </form>
                
