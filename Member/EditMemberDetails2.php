@@ -26,7 +26,7 @@
     <div id="pageContent">
        
         <?php
-        var_dump($basicinfo['record_id']);
+        #var_dump($basicinfo['record_id']);
                     require '../dbfunction.php';
 
                     $con = getDbConnect();
@@ -36,8 +36,8 @@
                     } else {
                         $recordid = $basicinfo['record_id'];
                         $sqlStr = "SELECT *, aes_decrypt(password,'$SALT') as password " .
-                                "FROM memberbasicinfo mb,memberaccount " ;
-                               "WHERE mb.record_id = '$recordid' ";
+                                "FROM memberbasicinfo mb,memberaccount ma " .
+                               "WHERE mb.record_id = '$recordid' and  ma.record_id = '$recordid' ";
                         
                         $result = mysqli_query($con, $sqlStr);
                         $row = mysqli_fetch_array($result);
