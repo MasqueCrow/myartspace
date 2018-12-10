@@ -35,20 +35,10 @@
                             $last_name = $_POST['last_name'];
                             $gender = $_POST['gender'];
                             $nationality = $_POST['nationality'];
-                            //  $occupation = $_POST['occupation'];
-                            //$address1 = $_POST['address_line1'];
+
 
                             $sqlStr = "UPDATE adminaccount " .
                                     "SET first_name ='$first_name',last_name='$last_name', gender='$gender',nationality='$nationality' " .
-                                    /*  "occupation='$occupation', " .
-                                      "address_line1='$address1', " .
-                                      "address_line2='$address2', " .
-                                      "address_line3='$address3', " .
-                                      "email_address_1='$emailaddress1', " .
-                                      "email_address_2='$emailaddress2', " .
-                                      "contact_no1= '$contact1', " .
-                                      "contact_no2='$contact2',  " .
-                                      "date_of_birth='$DOB' " ; */
                                     "WHERE record_id='$recordid' ";
                            
                           
@@ -57,9 +47,9 @@
                           
 
                             if (mysqli_affected_rows($connect) > 0) {
-                                echo "record Updated";
+                                echo "record updated";
                             } else {
-                                echo "NO record updated.";
+                                echo "No record updated.";
                             }
                         }
                         mysqli_close($connect);
