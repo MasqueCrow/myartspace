@@ -15,7 +15,6 @@
           require'checkLoginState.php';
         
         $basicinfo = $_SESSION['basicinfo'];
-        #var_dump($basicinfo);
         echo "<h2 id='welcome'>welcome back: " . $basicinfo['first_name'] . " " . $basicinfo['last_name'] . "</h2><br />";
         echo"<img id='welcome1'height='200' src='profilePic/".$basicinfo['image'].".jpg'/>";
         ?>
