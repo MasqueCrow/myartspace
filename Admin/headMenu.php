@@ -17,10 +17,16 @@
         ?>
 
         <ul id="navigation">
+            <?php
+                if($admininfo['record_id']== 2){
+                    echo "<li><a href='registerNewAdmin.php'>Add new admin</a></li>";
+                }   
+            ?>
             <li><a href="registerForm.php">Registration</a></li>
             <li><a href="ViewAdminMemberInfo.php">View Details</a></li>
             <li><a href="Package/Packageinfo.php">Packages</a></li>
             <li><a href="AdminLoginPage.php">Logout</a></li>
+
 
         </ul>
     </body>
