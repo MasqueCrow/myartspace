@@ -4,13 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <link href="css/default.css" rel="stylesheet" type="text/css" />
-      
- <?php
+    </head>
+
+     <?php
        include "StoreVadJs.html";
        ?>
-       
-
-    </head>
 
     <title></title>
 </head>
@@ -52,8 +50,8 @@
                             </p>
                             <p>
                                 <label>Gender:</label>
-                                <input type="radio"checked="checked"name="gender" value="M">Male<br>
-                                 <input type="radio" name="gender" value="F">Female
+                                <input class='genderBtn'  type="radio"checked="checked" name="gender" value="M">Male
+                                 <input class='genderBtn' type="radio" name="gender" value="F">Female
                              
                             </p>
                             <p>
