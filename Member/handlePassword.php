@@ -34,9 +34,9 @@ $record_id=$basicinfo['record_id'];
                             mysqli_query($con, $sqlStr)or die(mysqli_error($con));
 
                         if (mysqli_affected_rows($con) > 0) {
-                            echo "record Updated";
+                            echo "record updated";
                         } else {
-                            echo "NO record updated.";
+                            echo "No record updated.";
                         }
                         mysqli_close($con);
                            
