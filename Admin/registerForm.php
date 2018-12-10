@@ -90,12 +90,13 @@
                                 <label>Contact No 2:</label>
                                 <input type="text" class="text" name="contact_no2" />
                             </p>
+
                             <p class="area">
                                 <label>Date of Birth:</label>
-                              
                                 <input type="date"  class="text" name="date_of_birth" />
                                 
                             </p>
+                            
                             <p>
                                 <label>&nbsp;</label>
                                 <input type="submit" class="btn" value="Submit" />
