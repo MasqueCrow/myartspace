@@ -30,7 +30,6 @@
                     } else {
                         $username = $_POST['login_id'];
                         $password = $_POST['password'];
-                        //  $recordid = $_SESSION['recordid'];
                         $first_name = $_POST['first_name'];
                         $last_name = $_POST['last_name'];
                         $gender = $_POST['gender'];
@@ -43,12 +42,12 @@
                         $emailaddress2 = $_POST['email_address_2'];
                         $contact1 = $_POST['contact_no1'];
                         $contact2 = $_POST['contact_no2'];
-                        $DOB = $_POST['date_of_birth'];
+                        $DOB = $_POST['date_of_birth']." 00:00:00";
                         $record_id = $basicinfo['record_id'];
                         
                         
                         
-                        $sqlStr = "UPDATE memeberbasicinfo " .
+                        $sqlStr = "UPDATE memberbasicinfo " .
                                 "SET first_name ='$first_name', " .
                                 "last_name='$last_name', " .
                                 "gender='$gender', " .
@@ -64,18 +63,33 @@
                                 "date_of_birth='$DOB' " .
                                 "WHERE record_id='$record_id'";
                         
-                                $sqlStr1 = "UPDATE memeberaccount " .
-                                "SET login_id='$username', password='$password' " .
+                                $sqlStr1 = "UPDATE memberaccount " .
+                                "SET login_id='$username', password= aes_encrypt('$password','$SALT') " .
                                 "WHERE record_id='$record_id'";
-                     $result1=   mysqli_query($con, $sqlStr) or die(mysqli_error($con));
-                        $result2=    mysqli_query($con, $sqlStr1) or die(mysqli_error($con));
+                                
+                                $result1 = mysqli_query($con, $sqlStr) or die(mysqli_error($con));
+                                $result2 = mysqli_query($con, $sqlStr1) or die(mysqli_error($con));
                        
                         
                         
-                    if ($result1 ||$result2) {
-                            echo "record Updated";
+                    if ($result1 || $result2) {
+                        #Retrieve updated member's record
+                        $sqlQueryStr =
+                        "SELECT *  " .
+                        "FROM memberaccount ma, memberbasicinfo mb ".
+                        "WHERE ma.record_id =mb.record_id AND ma.record_id= $record_id";
+                        
+                        $result = mysqli_query($con, $sqlQueryStr) or die(mysql_error($con, $sqlQueryStr)); // execute the SQL query        
+
+                        if ($row = mysqli_fetch_array($result)) { // fetch the record
+                            $_SESSION['basicinfo'] = $row; // Re-update session with latested edited record
+                            
+                        }
+
+                        echo "Record updated";
+                           
                         } else {
-                            echo "NO record updated.";
+                            echo "No record updated.";
                         }
                         mysqli_close($con);
                     }
