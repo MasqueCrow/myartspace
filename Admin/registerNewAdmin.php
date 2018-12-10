@@ -6,11 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <link href="css/default.css" rel="stylesheet" type="text/css" />
-      
+        <!--<script src="https://code.jquery.com/jquery-1.7.min.js"></script>-->
+       <script src='js/jquery.js'></script>
+        <script src="js/pswd.js"></script>
+       
 </head>
 
+
 <?php
-include "StoreVadJs.html";
+    include "StoreVadJs.html";
 ?>
 
 <body>
@@ -37,6 +41,15 @@ include "StoreVadJs.html";
                             <p>
                                 <label>Password:</label>
                                 <input  id="password" type="password" class="text" name="password" />
+                                <div id='pswd_info'>
+                                    <h4>Password has to meet the following requirements</h4>
+                                    <ul>
+                                        <li id='letter' class='invalidity'>At least <strong>one letter</strong></li>
+                                        <li id='capital' class='invalidity'>At least <strong>one capital letter</strong></li>
+                                        <li id='number' class='invalidity'>At least <strong>one number</strong></li>
+                                        <li id='length' class='invalidity'>At least <strong>8 characters</strong></li>
+                                    </ul>   
+                                </div>
                                 <span id="result"></span>
                             </p>
                             

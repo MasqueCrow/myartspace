@@ -7,7 +7,7 @@
     </head>
 
      <?php
-       include "StoreVadJs.html";
+      # include "StoreVadJs.html";
        ?>
 
     <title></title>
@@ -34,7 +34,7 @@
                     <div class="CustomerDetailsBox2">
                         <form id="form" class="blocks" action="handleAdd.php" method="post" >
 
-                          
+                            <h2 style='margin-left:4%;margin-bottom:2%;'>Register New Member</h2>
                             <p>
                                 <label>Password:</label>
                                 <input  id="password" type="password" class="text" name="password" />
