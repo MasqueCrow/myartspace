@@ -26,7 +26,7 @@ include "StoreVadJs.html";
     
     <div id="pageContent">
     <div class="CustomerDetailsBox2">
-                        <form id="form" class="blocks" action="" method="post" >
+                        <form id="form" class="blocks" action="handleAdminAdd.php" method="post" >
                         <h2 style='margin-left:4%;margin-bottom:2%;'>Admin Account</h2>
                             <p>
                                 <label>Username :</label>
@@ -54,7 +54,7 @@ include "StoreVadJs.html";
 
                             <p>
                                 <label>Gender:</label>
-                                <input type="radio" class='genderBtn' checked="checked"name="gender" value="M">Male
+                                <input type="radio" class='genderBtn' checked="checked" name="gender" value="M">Male
                                  <input type="radio" class='genderBtn' name="gender" value="F">Female
                              
                             </p>
@@ -71,7 +71,7 @@ include "StoreVadJs.html";
 
                             <p>
                                 <label style='font-size:12.7px;'>Company Email:</label>
-                                <input type="text" class="text" name="company_email_address" />
+                                <input type="text" class="text" placeholder='optional' name="company_email_address" />
                             </p>
 
                             <p>
