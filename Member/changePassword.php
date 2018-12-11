@@ -20,9 +20,6 @@
 
                 <div id="pageContent">
                     <h1> Change Password:</h1>
-
-        
-
         <?php
         require '../dbfunction.php';
           $record_id=$basicinfo['record_id'];//from Memberhandlelogin.php
