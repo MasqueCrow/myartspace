@@ -7,7 +7,7 @@
     </head>
 
      <?php
-      # include "StoreVadJs.html";
+       include "StoreVadJs.html";
        ?>
 
     <title></title>

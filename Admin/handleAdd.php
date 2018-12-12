@@ -22,8 +22,6 @@
                     if (mysqli_connect_errno($con)) {
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     } else {
-                        //$recordid = $_SESSION['recordid'];
-                        //$login_id = $_POST['login_id'];
                         $password = $_POST['password'];
                         $first_name = $_POST['first_name'];
                         $last_name = $_POST['last_name'];
@@ -55,11 +53,7 @@
                                 "'$contact2',  " .
                                 "'$DOB',". $admininfo['record_id'].",NOW() ) ";
 
-
-                        //  "WHERE recordid=$recordid";
-
-
-                        mysqli_query($con, $sqlStr);
+                        mysqli_query($con, $sqlStr) or die(mysqli_error($con));
 
 
                         $Auto_increment = mysqli_insert_id($con);
@@ -68,12 +62,12 @@
                                 "VALUES (' $emailaddress1', AES_ENCRYPT('$password','$SALT'),'$Auto_increment',NOW()) ";
 
 
-                        $sqlSPpackage = "Insert into signuppackage " .
+                       /* $sqlSPpackage = "Insert into signuppackage " .
                                 "(member_record_id,status) " .
                                 "VALUES('$Auto_increment','1')";
 
-                        mysqli_query($con, $sqlSPpackage) or die(mysqli_error($con));
-                        mysqli_query($con, $sqlStr2) or die(mysqli_error($con));
+                        mysqli_query($con, $sqlSPpackage) or die(mysqli_error($con));*/
+                       mysqli_query($con, $sqlStr2) or die(mysqli_error($con));
 
                         if (mysqli_affected_rows($con) > 0) {
                             echo "Member Successfully Created";

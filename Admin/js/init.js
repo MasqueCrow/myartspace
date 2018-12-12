@@ -50,11 +50,12 @@ $(function(){
 			contact_no1: {
 				required: true,
 				number: true,
-				minlength: 8
+				maxlength: 8
 			},
                         contact_no2: {
+				required: true,
 				number: true,
-				minlength: 8
+				maxlength: 8
 			},
                         package: {
                             required: true,
@@ -81,10 +82,10 @@ $(function(){
 				required: 'This field is required'
 			},
                         gender: {
-				required: 'No gender? you gay? '
+				required: 'Please include your gender '
 			},
                         nationality: {
-				required: 'No nationality? You Alien? OO'
+				required: 'Please include your nationality'
 			},
                         occupation: {
 				required: 'This field is required'
@@ -122,7 +123,7 @@ $(function(){
                         },
 			
 			date_of_birth: {
-				required: 'How can you not exist? 0_0'
+				required: 'Please put a valid date of birth'
                                 
 			}
 		},
