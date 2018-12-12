@@ -22,7 +22,7 @@
 
 
 <?php
-require_once '../../dbfunction.php';
+require_once '../dbfunction.php';
 $con=  getDbConnect();
 if(!mysqli_errno($con)){
 $packageid=$_GET['packageid'];
@@ -37,7 +37,7 @@ $memberid=$_GET['memberid'];
   }else{
       echo"Member's payment status not updated";
   }
-  echo"<a href='packageinfo.php'>[Back to Package list]</a>";
+  echo"<a href='package/packageinfo.php'>[Back to Package list]</a>";
 }else
 {
     echo"unable to connect to my sql".mysqli_connect_error();
