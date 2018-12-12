@@ -13,14 +13,17 @@
         <?php
         session_start();
         $admininfo = $_SESSION['admininfo'];
-        echo "<h2>Welcome back: " . $admininfo['first_name'] . " " . $admininfo['last_name'] . "</h2><br />";
+        echo "<br/><h2>Welcome back: " . $admininfo['first_name'] . " " . $admininfo['last_name'] . "</h2><br />";
         ?>
 
         <ul id="navigation">
             <li><a href="../registerForm.php">Registration</a></li>
             <li><a href="../ViewAdminMemberInfo.php">View Details</a></li>           
             <li><a href="Packageinfo.php">Packages</a></li>
+            <li><a href="../MemberPayment.php">Members Payment</a></li>
+            <li><a href="newPackage.php">New Package</a></li>
             <li><a href="../AdminLoginPage.php">Logout</a></li>
+
 
         </ul>
     </body>
