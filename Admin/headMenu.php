@@ -13,7 +13,7 @@
         <?php
         session_start();
         $admininfo = $_SESSION['admininfo'];
-        echo "<h2>welcome back: " . $admininfo['first_name'] . " " . $admininfo['last_name'] . "</h2><br />";
+        echo "<br/><h2>Welcome back: " . $admininfo['first_name'] . " " . $admininfo['last_name'] . "</h2><br />";
         ?>
 
         <ul id="navigation">

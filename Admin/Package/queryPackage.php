@@ -24,8 +24,8 @@ if (mysqli_connect_errno($connect)) {
             <?php
             $result = mysqli_query($connect, $sqlAdminQuery) or die(mysqli_error($connect));
           if($row = mysqli_fetch_array($result)){ 
-                echo"<a href='ListMemberPackage.php?package_id=$i'>";
-                echo"<img src='image/" . $imageList[$i - 1] . ".jpg' alt='Cannot be displayed'/>";
+                echo"<a href='ListMemberPackage.php?package_id=$i'><br/>";
+                echo"<img src='image/" . $imageList[$i - 1] . ".jpg' alt='Cannot be displayed'/><br/>";
                 echo"</a>";
                 echo "<br/>Package:" . $row['package_name'] . "<br/>";
                 echo "Description:" . $row['package_description'] . "<br/>";

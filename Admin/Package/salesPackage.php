@@ -38,7 +38,7 @@
                                     $totalSales+=$result['purchase_price'];
                                 }
                             }
-                            echo"Sales:$$totalSales";
+                            echo"<br/> Total sales: $$totalSales";
                             $result = mysqli_query($con, $sqlStr) or die(mysqli_error($con));
                             ?>
 
