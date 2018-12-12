@@ -67,7 +67,7 @@
                     
                     <br><br>
 
-                    <div id="resultDIV" style="padding:5px;width:200px;display:none;background-color:white;"></div>
+                    <div id="resultDIV"></div>
                    
                 </div>
 

@@ -30,7 +30,7 @@ Creating new type of package
                     <form id="form" class="blocks" method="post" action="handleNewPackage.php">
                        
                         <p>
-                        <label>Package: </label>
+                        <label>Package Name: </label>
                         <input type="text" class="text" name="package">
                         </p> 
                         

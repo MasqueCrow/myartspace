@@ -1,8 +1,3 @@
-<!--
-
-
-
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +24,6 @@
       $package_id=$_POST['package_id'];
       $member_id=$_POST['member_id'];
       $package_startdate=$_POST['package_startdate'];
-     // $package_enddate=$_POST['package_enddate'];
       $purchase_price=$_POST['purchase_price'];
       $payment_remark=$_POST['payment_remark'];
       $paymentstatus=$_POST['paymentstatus'];
