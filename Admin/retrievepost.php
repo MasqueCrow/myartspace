@@ -10,7 +10,7 @@ $connect1 = getDbConnect();
 if (!mysqli_connect_errno($connect1)) {
     $sqlQueryStr =
             "SELECT * " .
-            "FROM  memeberbasicinfo mb " .
+            "FROM  memberbasicinfo mb " .
             "WHERE mb.first_name like '$userinput%' AND mb.status='0' ";
 
 
