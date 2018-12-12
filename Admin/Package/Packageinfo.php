@@ -14,7 +14,6 @@
         <div id="rounded">
             <div id="main" class="container">
                 <h1>Admin Account Page</h1>
-                <br/>
                 <?php
                 include './headMenu.php';
                 ?>
