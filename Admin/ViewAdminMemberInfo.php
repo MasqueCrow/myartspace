@@ -45,7 +45,8 @@
 
                 <div id="pageContent">
 
-                    <h3>Personal Details:</h3>
+                    <h2 style='color:black;'>Personal Details:</h2>
+                    <br/><br/>
 
                     <?php
                     require '../dbfunction.php';
@@ -54,8 +55,9 @@
 
                     $connect = getDbConnect();
                     $admininfo = getUpdatedAdmininfo($connect); //from dbAdmin
-
+                    #var_dump($admininfo);
                     foreach ($admininfo as $adminid => $adminforinfo) {
+                        #echo"<img src='prof_pic/" . $admininfo[0]->image . ".jpg' alt='Cannot be displayed'/><br/>";
                         echo $adminforinfo->printDetails(); //printDetails in Admininfo.php for EDITED details (for Admin)
                         echo "<a href='editAdminInfo.php'>[Edit detail]</a>";
                     }
@@ -63,14 +65,6 @@
                     <br/><br/>
                     <h3>Member Details:</h3> <br/><input id="yourInput" type="text" size="20" /><br/><br/>
                     
-                    <?php
-                   // $connect1 = getDbConnect();
-                    //require'dbMember.php';
-                    //$memberinfo = getMemberinfo($connect1);
-                    
-                    ?>
-                    
-
                     <br><br>
 
                     <div id="resultDIV" style="padding:5px;width:200px;display:none;background-color:white;"></div>
