@@ -25,7 +25,7 @@
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     } else {
                         $sqlStr = "SELECT  sp.member_record_id as member_record_id,  
-                            ap.package_name as package_name, ap.duration_type, ap.duration, sp.package_id as package_id,
+                            ap.package_name as package_name, ap.duration_type, ap.duration, sp.package_id as package_id,sp.package_startdate,sp.package_enddate,
                             ap.package_id,sp.status as status  " .
                                 "FROM  signuppackage sp,artpackage ap " .
                                 "WHERE sp.member_record_id= '$member_record_id' " .
@@ -39,17 +39,16 @@
                             <div class="CustomerDetailsBox2">  
                                 
                                 <?php
-                
-                                if ( $row['status'] == 0 ) {
+               
+                                if ( $row['status'] == 0 &&strtotime ($row['package_enddate'])<strtotime (date("Y-m-d H:i:s.0")) ) {
                                     echo "<br/>" ." <b>Package Name:</b> ". $row['package_name'] ." <b>(Present)</b>". "<br/>";
-                                  //  echo $row['duration_type']. "<br/>";
-                                  // echo $row['duration']; 
+                                 
                                     if ($row['duration_type']==0) {
                                         echo "Duration: ". $row['duration'] . " days<br/><br/>";   
                                     } else {
                                         echo "Duration: ". $row['duration'] . " weeks<br/><br/>";
                                     }
-                                } else {
+                                } else  {
                                     echo "<br/>" ." <b>Package Name:</b> ". $row['package_name'] . " <b>(Past)</b>". "<br/>";
                                     
                                      if ($row['duration_type']==0) {

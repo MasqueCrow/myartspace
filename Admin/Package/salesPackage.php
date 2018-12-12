@@ -26,7 +26,10 @@
                         if (mysqli_connect_errno($con)) {
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         } else {
-                            $sqlStr = "SELECT  sp.package_id as package_id_1, sp.purchase_price, ap.package_id as package_id, ap.package_name,sp.status,sp.payment_status " .
+                            $sqlStr = 
+                                    "SELECT  sp.package_id as package_id_1,
+                                        sp.purchase_price, ap.package_id as package_id, ap.package_name,
+                                        sp.status,sp.payment_status,sp.package_enddate " .
                                     "FROM signuppackage sp, artpackage ap " .
                                     "WHERE sp.package_id =ap.package_id AND sp.package_id='$sale_package_id' AND sp.status='0' AND sp.payment_status='0' " .                           
                                     "ORDER BY package_id ASC";
@@ -34,11 +37,11 @@
                             $calculation = mysqli_query($con, $sqlStr) or die(mysqli_error($con));
                             $totalSales = 0;
                             while ($result = mysqli_fetch_array($calculation)) {
-                                if ($result['package_id_1'] == $sale_package_id) {
+                                if ($result['package_id_1'] == $sale_package_id &&strtotime ($result['package_enddate'])<strtotime (date("Y-m-d H:i:s.0"))) {
                                     $totalSales+=$result['purchase_price'];
                                 }
                             }
-                            echo"<br/> Total sales: $$totalSales";
+                            echo"Monthly Sales: $$totalSales";
                             $result = mysqli_query($con, $sqlStr) or die(mysqli_error($con));
                             ?>
 
