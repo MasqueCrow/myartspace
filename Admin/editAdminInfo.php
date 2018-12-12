@@ -35,11 +35,8 @@
                     $admininfoList = getExistingAdmininfo($connect); //from dbAdmin
 
                     foreach ($admininfoList as $adminid => $adminforinfo) {
-                        //echo $adminforinfo->company_email;
                         echo $adminforinfo->printEditDetails(); //printEditDetails in Admininfo.php
                     }
-
-                    // $connect = getDbConnect();
                     ?>
 
 
