@@ -17,7 +17,7 @@
             <li><a href="registerForm.php">Registration</a></li>
             <li><a href="ViewAdminMemberInfo.php">View Details</a></li>           
             <li><a href="Package/Packageinfo.php">Packages</a></li>
-            <li><a href="MemberPayment.php">Members Payment</a></li>
+            <li><a href="MemberPayment.php">Mem Payment</a></li>
             <li><a href="Package/newPackage.php">New Package</a></li>
              <li><a href="AdminLoginPage.php">Logout</a></li>
 

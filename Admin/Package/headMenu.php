@@ -20,7 +20,7 @@
             <li><a href="../registerForm.php">Registration</a></li>
             <li><a href="../ViewAdminMemberInfo.php">View Details</a></li>           
             <li><a href="Packageinfo.php">Packages</a></li>
-            <li><a href="../MemberPayment.php">Members Payment</a></li>
+            <li><a href="../MemberPayment.php">Mem Payment</a></li>
             <li><a href="newPackage.php">New Package</a></li>
             <li><a href="../AdminLoginPage.php">Logout</a></li>
 
