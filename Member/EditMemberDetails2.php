@@ -69,7 +69,7 @@
                          <span id="availability_status"></span>
                         </p>
                          
-                <p><label>Password:</Label><input class="text" type="text" name="password" value="<?= $row['password'] ?>" /></p>
+                <p><label>Password:</Label><input class="text" type="password" name="password" value="<?= $row['password'] ?>" /></p>
                 <p><label>First Name:</Label><input class="text" type="text" name="first_name" value="<?= $row['first_name'] ?>"/></p>
                 <p><label>Last Name:</Label><input class="text"  type="text" name="last_name" value="<?= $row['last_name'] ?>"/></p>
                 <p><label>Gender:</Label><input class="text"  type="text" name="gender" value="<?= $row['gender'] ?>"/></p>
