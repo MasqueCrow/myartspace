@@ -1,7 +1,7 @@
 ![ScreenShot](doc_image/my_art_space.PNG)
 
 # Summary
-Myartspace is an admistrative website that is developed to imitate real world web application to help admins to create new art classes as well as registering members to their interested classes. This is an assignment project for our module 'Web Application Development' where our focus is to learn to develop back-end web application using server side scripting language, PHP and SQL to perform CRUD operations on our database. This project was completed during my polytechnic years by me and another team member.
+Myartspace is an admistrative website that was developed to imitate real world web application to help admins to create new art classes as well as registering members to their interested classes. This was an assignment project for our module 'Web Application Development' where our focus is to learn to develop back-end web application using server side scripting language, PHP and SQL to perform CRUD operations on our database. This project was completed during my polytechnic years by me and another team member.
 
 # Main Features
 Below is a list of features that forms the main component of the application.
