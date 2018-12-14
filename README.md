@@ -19,3 +19,35 @@ Below is a list of features that forms the main component of the application.
 2. View registered package
 3. Reset password
 
+## Screenshots
+
+### Administrator
+
+#### Register a new member account for myartspace
+![ScreenShot](doc_image/admin/register_member.PNG)
+
+#### View members who are handled by specified admin
+![ScreenShot](doc_image/admin/find_member.PNG)
+
+#### Create/Edit/Delete art packages
+![ScreenShot](doc_image/admin/packages.PNG)
+![ScreenShot](doc_image/admin/create_new_package.PNG)
+
+#### Register and deregister members for artclasses
+![ScreenShot](doc_image/admin/register_deregister_package.PNG)
+
+#### Send artclass payment reminder to members
+![ScreenShot](doc_image/admin/send_reminder.PNG)
+
+### Member
+
+#### View/Edit personal detail
+![ScreenShot](doc_image/member/personal_detail.PNG)
+
+#### View registered package
+![ScreenShot](doc_image/member/registered_package.PNG)
+
+#### Reset password
+![ScreenShot](doc_image/member/update_record.PNG)
+
+
